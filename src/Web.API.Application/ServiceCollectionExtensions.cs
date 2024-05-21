@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Web.API.Application.Common.Helpers;
 using Web.API.Core.Domain.Entities.Identity;
 using Web.API.Infrastructure.Data.DAL;
 
@@ -14,10 +15,10 @@ namespace Web.API.Application
 {
     public static class ServiceCollectionExtensions
     {
-        public static void InstallRoutedServices(this IServiceCollection services, IConfiguration configuration)
+        public static void InstallPdksServices(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddTransient(typeof(IPipelineBehavior<TRequest, TResponse>), typeof(AuthorizationBehaviour<,>));
+            //services.AddTransient(typeof(IPipelineBehavior<TRequest, TResponse>), typeof(AuthorizationBehaviour<,>));
 
             RegisterData(services);
             RegisterServiceConnectors(services);
@@ -25,27 +26,28 @@ namespace Web.API.Application
             RegisterAuth(services, configuration);
 
         }
+
         private static void RegisterServices(IServiceCollection services)
         {
-           // register application services
+            services.AddTransient<IExceptionHelper, ExceptionHelper>();
         }
 
         private static void RegisterServiceConnectors(IServiceCollection services)
         {
-            services.AddTransient<ISignalRNotifier, SignalRNotifier>();
+            //services.AddTransient<ISignalRNotifier, SignalRNotifier>();
         }
 
         private static void RegisterData(IServiceCollection services)
         {
-            services.AddIdentity<User, Role>(options =>
-            {
-                options.Password.RequireLowercase = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequiredLength = 8;
-                options.Password.RequireNonAlphanumeric = true;
-            })
+            //services.AddIdentity<User, Role>(options =>
+            //{
+            //    options.Password.RequireLowercase = true;
+            //    options.Password.RequireUppercase = true;
+            //    options.Password.RequiredLength = 8;
+            //    options.Password.RequireNonAlphanumeric = true;
+            //})
             //.AddClaimsPrincipalFactory<ClaimPrincipalFactory>()
-            .AddEntityFrameworkStores<AppDbContext>();
+            //.AddEntityFrameworkStores<AppDbContext>();
             //.AddUserStore<ExtendedUserStore>()
             //.AddRoleValidator<TenantRoleValidator>()
             //.AddDefaultTokenProviders()

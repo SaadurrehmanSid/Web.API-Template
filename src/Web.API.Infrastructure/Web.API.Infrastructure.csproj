@@ -11,10 +11,14 @@
     <Folder Include="Extensions\" />
     <Folder Include="Application Services\" />
     <Folder Include="External Services\" />
+    <Folder Include="Migrations\" />
     <Folder Include="ServiceConnecters\SignalR\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -30,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Web.API.Core\Web.API.Core.csproj" />
+    <ProjectReference Include="..\Web.API.SharedKernel\Web.API.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

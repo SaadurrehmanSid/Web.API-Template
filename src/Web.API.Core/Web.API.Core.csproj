@@ -10,12 +10,16 @@
     <Folder Include="Constants\" />
     <Folder Include="DTOs\" />
     <Folder Include="Enums\" />
-    <Folder Include="Extensions\" />
     <Folder Include="ProjectAggregate\Specifications\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Web.API.SharedKernel\Web.API.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
