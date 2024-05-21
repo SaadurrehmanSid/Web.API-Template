@@ -7,13 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
     <Folder Include="DTOs\" />
     <Folder Include="Features\Product\Commands\" />
     <Folder Include="Features\Product\DTO\" />
     <Folder Include="Features\Product\Queries\" />
     <Folder Include="Mappings\" />
-    <Folder Include="ApplicationResponseModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Web.API.Core\Web.API.Core.csproj" />
+    <ProjectReference Include="..\Web.API.Infrastructure\Web.API.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
