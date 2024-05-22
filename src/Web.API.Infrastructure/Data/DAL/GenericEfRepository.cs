@@ -38,7 +38,18 @@ namespace Web.API.Infrastructure.Data.DAL
             await base.DeleteAsync(model!);
         }
 
+        public async Task DeleteAsync(Guid id)
+        {
+            var model = await base.GetByIdAsync(id);
+            await base.DeleteAsync(model!);
+        }
+
         public async Task<T?> GetByIdAsync(long id)
+        {
+            return await base.GetByIdAsync(id);
+        }
+
+        public async Task<T?> GetByIdAsync(Guid id)
         {
             return await base.GetByIdAsync(id);
         }

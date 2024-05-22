@@ -11,9 +11,6 @@
     <Folder Include="Features\Product\Commands\" />
     <Folder Include="Features\Product\DTO\" />
     <Folder Include="Features\Product\Queries\" />
-    <Folder Include="Features\PublicHoliday\DTOs\" />
-    <Folder Include="Features\PublicHoliday\Queries\" />
-    <Folder Include="Mappings\" />
   </ItemGroup>
 
   <ItemGroup>

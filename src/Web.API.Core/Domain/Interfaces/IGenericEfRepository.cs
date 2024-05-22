@@ -14,7 +14,9 @@ namespace Web.API.Core.Domain.Interfaces
     {
         Task<T> AddAsync(T model);
         Task DeleteAsync(long id);
+        Task DeleteAsync(Guid id);
         Task<T?> GetByIdAsync(long id);
+        Task<T?> GetByIdAsync(Guid id);
         Task UpdateAsync(T model);
         Task UpdateRangeAsync(List<T> model);
         IQueryable<T> Get();

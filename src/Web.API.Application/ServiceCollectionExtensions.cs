@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Web.API.Application.Common.Behavior;
 using Web.API.Application.Common.Helpers;
 using Web.API.Core.Domain.Entities.Identity;
 using Web.API.Infrastructure.Data.DAL;
@@ -18,8 +19,8 @@ namespace Web.API.Application
         public static void InstallPdksServices(this IServiceCollection services, IConfiguration configuration)
         {
 
-            //services.AddTransient(typeof(IPipelineBehavior<TRequest, TResponse>), typeof(AuthorizationBehaviour<,>));
-
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddHttpContextAccessor();
             RegisterData(services);
             RegisterServiceConnectors(services);
             RegisterServices(services);
